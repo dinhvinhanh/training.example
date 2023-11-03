@@ -6,15 +6,16 @@ public class PTGT {
     private double gia;
     private String mau;
 
-    public PTGT()
-    {
-    }
-    public PTGT(String hangSX,int namSX,double gia,String mau)
-    {
+    private String maSoPT;
+
+    public PTGT() {}
+
+    public PTGT(String hangSX,int namSX,double gia,String mau,String maSoPT) {
         this.hangSX=hangSX;
         this.namSX=namSX;
         this.gia=gia;
         this.mau=mau;
+        this.maSoPT=maSoPT;
     }
 
     public String getHangSX() {
@@ -49,6 +50,14 @@ public class PTGT {
         this.mau = mau;
     }
 
+    public String getMaSoPT() {
+        return maSoPT;
+    }
+
+    public void setMaSoPT(String maSoPT) {
+        this.maSoPT = maSoPT;
+    }
+
     @Override
     public String toString() {
         return "PTGT{" +
@@ -56,6 +65,7 @@ public class PTGT {
                 ", namSX=" + namSX +
                 ", gia=" + gia +
                 ", mau='" + mau + '\'' +
+                ", maSoPT='" + maSoPT + '\'' +
                 '}';
     }
 }
