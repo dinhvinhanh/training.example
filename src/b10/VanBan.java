@@ -2,13 +2,10 @@ package b10;
 
 public class VanBan {
     protected String str;
-
     VanBan(){}
-
     VanBan(String str) {
         this.str = str;
     }
-
     static int dem(VanBan vb)
     {
         int soDem;
@@ -20,7 +17,6 @@ public class VanBan {
         }
         return soDem;
     }
-
     static int demkt(VanBan vb)
     {
         int soDem = 0;
