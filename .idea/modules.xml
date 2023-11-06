@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/fpt.training.example.iml" filepath="$PROJECT_DIR$/fpt.training.example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java.training.example.iml" filepath="$PROJECT_DIR$/java.training.example.iml" />
     </modules>
   </component>
 </project>
