@@ -24,7 +24,8 @@ public class XeTai extends PTGT {
     @Override
     public String toString() {
         return "XeTai{" +
+                super.toString() +
                 "trongTai=" + trongTai +
-                "} " + super.toString();
+                "} ";
     }
 }

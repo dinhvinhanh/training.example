@@ -32,8 +32,9 @@ public class OTo extends PTGT {
     @Override
     public String toString() {
         return "OTo{" +
+                super.toString() +
                 "soCho=" + soCho +
                 ", kieuDongCo='" + kieuDongCo + '\'' +
-                "} " + super.toString();
+                "} ";
     }
 }

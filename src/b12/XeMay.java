@@ -21,7 +21,8 @@ public class XeMay extends PTGT {
     @Override
     public String toString() {
         return "XeMay{" +
+                super.toString() +
                 "congSuat=" + congSuat +
-                "} " + super.toString();
+                "} ";
     }
 }
