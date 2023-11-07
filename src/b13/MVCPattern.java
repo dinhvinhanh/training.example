@@ -5,9 +5,6 @@ import b13.entity.Employee;
 import b13.entity.Intern;
 import b13.exception.FullNameException;
 import b13.view.EmployeeView;
-import b4.Family;
-import b4.Person;
-import b4.Town;
 
 import java.util.ArrayList;
 import java.util.List;

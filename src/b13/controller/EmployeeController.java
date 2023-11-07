@@ -43,10 +43,13 @@ public class EmployeeController {
     }
 
     public void run () {
-        view.showMessage("EMS PROGRAMMING");
+//        while (true) {
+//            view.showOption(employeeList);
+//        }
+        //view.showMessage("EMS PROGRAMMING");
         view.showOption(employeeList);
         //view.addEmployee(0);
-        view.showEmployeeList(employeeList);
+        //view.showEmployeeList(employeeList);
     }
 
     public EmployeeView getView() {
