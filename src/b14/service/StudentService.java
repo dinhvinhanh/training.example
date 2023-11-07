@@ -10,5 +10,5 @@ import java.util.stream.Collectors;
 
 public class StudentService {
     private List<Student> studentList;
-    
+
 }

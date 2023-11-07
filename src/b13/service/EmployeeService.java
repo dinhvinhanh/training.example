@@ -1,5 +1,6 @@
 package b13.service;
 
+import b13.contant.EnumEmployee;
 import b13.entity.Employee;
 import b13.entity.Experience;
 import b13.entity.Fresher;
@@ -33,16 +34,17 @@ public class EmployeeService {
         return true;
     }
 
-    public List<Employee> findByType(int type) {
+    public List<Employee> findByType(Integer type) {
+
         return this.employees.stream()
                 .filter(employee -> {
-                    if (type == 0) {
+                    if (type.equals(EnumEmployee.EXPERIENCE.getIndex())) {
                         return employee instanceof Experience;
                     }
-                    if (type == 1) {
+                    if (type.equals(EnumEmployee.FRESHER.getIndex())) {
                         return employee instanceof Fresher;
                     }
-                    if (type == 2) {
+                    if (type.equals(EnumEmployee.INTERN.getIndex())) {
                         return employee instanceof Intern;
                     }
                     return false;

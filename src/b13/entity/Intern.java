@@ -8,7 +8,6 @@ public class Intern extends Employee {
     private String universityName;
 
     public Intern (){}
-
     public Intern(String id, String fullName, String birthDay, String phone, String email, List<Certificate> certificates, String majors, String semester, String universityName) {
         super(id, fullName, birthDay, phone, email, certificates);
         this.majors = majors;
