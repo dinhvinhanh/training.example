@@ -6,13 +6,13 @@ public enum EnumEmployee {
     INTERN (2),
     ;
 
-    private Integer index;
+    private int index;
 
-    EnumEmployee(Integer i) {
+    EnumEmployee(int i) {
         this.index = i;
     }
 
-    public Integer getIndex() {
+    public int getIndex() {
         return index;
     }
 }

@@ -18,6 +18,17 @@ public class EmployeeView {
         showMessage(employee.toString());
     }
     public void showEmployeeList (List<Employee> employees) {
+        int size =  employees.size();
+
+        if (size == 0 ) {
+            showMessage("No employees found.");
+            return;
+        }
+        //showListView();
+        employees.forEach(this::showEmployeeInfo);
+    }
+
+    public void showEmployeeListByType (List<Employee> employees) {
         employees.forEach(this::showEmployeeInfo);
     }
 
@@ -37,34 +48,55 @@ public class EmployeeView {
 
         return employee;
     }
-    public void showOption (List<Employee> employees) {
-        while (true) {
-            showMessage("Choose option: ");
-            showMessage("0. Show Employee List. ");
-            showMessage("1. Add Employee. ");
-            showMessage("2. Remove Employee. ");
-            showMessage("3. Update Employee. ");
-            showMessage("4. Find Employee. ");
-            showMessage("5. Exit. ");
+    public int menuOption() {
+        showMessage("Choose option: ");
+        showMessage("0. Show Employee List. ");
+        showMessage("1. Show Employee List. ");
+        showMessage("2. Add Employee. ");
+        showMessage("3. Remove Employee. ");
+        showMessage("4. Update Employee. ");
+        showMessage("5. Find Employee. ");
+        showMessage("6. Exit. ");
 
-            Integer option = scanner.nextInt();
-            switch (option) {
-                case 0 :
-                    showEmployeeList(employees);
-                    break;
-                case 1:
-                    showMessage("Choose type: ");
-                    Integer type = scanner.nextInt();
-                    Employee employee = addEmployee(type);
-                    employees.add(employee);
-                    break;
-                default:
-                    break;
-            }
-        }
+        int option = scanner.nextInt();
+        return option;
     }
 
-    public Employee addEmployee(Integer type) {
+    public Employee updateEmployee(String id) {
+        return null;
+    }
+
+    public void successDelete() {
+        showMessage("DELETE SUCCESSFULLY");
+    }
+
+    public void failDelete() {
+        showMessage("DELETE FAIL");
+    }
+
+    public void successUpdate() {
+        showMessage("UPDATE SUCCESSFULLY");
+    }
+
+    public void failUpdate() {
+        showMessage("UPDATE FAIL");
+    }
+
+
+    public String getID() {
+        showMessage("Enter Id: ");
+        String id = scanner.next();
+        //scanner.nextLine();
+        return id;
+    }
+
+    public int getType() {
+        showMessage("Enter type: ");
+        int type = scanner.nextInt();
+        //scanner.nextLine();
+        return type;
+    }
+    public Employee addEmployee() {
         Integer check = EnumEmployee.EXPERIENCE.getIndex();
 
         showMessage("Enter full name: ");
@@ -73,27 +105,54 @@ public class EmployeeView {
         showMessage("Enter birthday: ");
         String doB = scanner.next();
 
+        showMessage("Enter phone number: ");
+        String phone = scanner.next();
 
-        if (type.equals(EnumEmployee.EXPERIENCE.getIndex())) {
-            Experience experience = new Experience("", name, doB, "", "", null, 0, "");
-            
-            //showMessage("Enter experienced time: ");
-            //experience.setExpInYear(scanner.next());
+        showMessage("Enter email: ");
+        String email = scanner.next();
+
+        showMessage("Enter type: ");
+        int type = scanner.nextInt();
+
+        if (type == EnumEmployee.EXPERIENCE.getIndex()) {
+            Experience experience = new Experience("", name, doB, phone, email, null, 0, "");
+
+            showMessage("Enter experienced time: ");
+            experience.setExpInYear(scanner.nextInt());
 
             showMessage("Enter skills: ");
             experience.setProSkill(scanner.next());
 
             return experience;
-        } else if (type.equals(EnumEmployee.FRESHER.getIndex())){
-            Fresher fresher = new Fresher("", name, doB, "", "", null, "", "", "");
+
+        } else if (type == EnumEmployee.FRESHER.getIndex()){
+            Fresher fresher = new Fresher("", name, doB, phone, email, null, "", "", "");
+
+            showMessage("Enter graduation date: ");
+            fresher.setGraduationDate(scanner.next());
+
+            showMessage("Enter graduation rank: ");
+            fresher.setGraduationRank(scanner.next());
+
             showMessage("Enter majors: ");
             fresher.setEducation(scanner.next());
+
             return fresher;
-        } else if (type.equals(EnumEmployee.INTERN.getIndex())){
-            Intern intern = new Intern("", name, doB, "", "", null, "", "", "");
+
+        } else if (type == EnumEmployee.INTERN.getIndex()){
+            Intern intern = new Intern("", name, doB, phone, email, null, "", "", "");
+
             showMessage("Enter majors: ");
             intern.setMajors(scanner.next());
+
+            System.out.print("Emter semester: ");
+            intern.setSemester(scanner.nextLine());
+
+            System.out.print("Emter university name: ");
+            intern.setUniversityName(scanner.nextLine());
+
             return intern;
+
         } else {
             return null;
         }
