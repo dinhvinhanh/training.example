@@ -102,7 +102,8 @@ public class EmployeeController {
                 }
             } else if (choice == MenuValue.UPDATE.getValue()) {
                 String updateId = view.getID();
-                Employee updatedEmployee = view.updateEmployee(updateId);
+                Employee employee = findById(updateId);
+                Employee updatedEmployee = view.updateEmployee(updateId, employee);
                 boolean updateCheck = update(updateId, updatedEmployee);
                 if (updateCheck) {
                     view.successUpdate();

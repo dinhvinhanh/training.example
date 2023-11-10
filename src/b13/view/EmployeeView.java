@@ -62,8 +62,64 @@ public class EmployeeView {
         return option;
     }
 
-    public Employee updateEmployee(String id) {
-        return null;
+    public Employee updateEmployee(String id, Employee employee) {
+        showMessage("Enter New Name: ");
+        String newFullName = scanner.next();
+
+        showMessage("Enter New DOB: ");
+        String newBirthDay = scanner.next();
+
+        showMessage("Enter New Phone Number: ");
+        String newPhone = scanner.next();
+
+        showMessage("Enter New Email: ");
+        String newEmail = scanner.next();
+
+        employee.setBirthday(newBirthDay);
+        employee.setEmail(newEmail);
+        employee.setPhone(newPhone);
+        employee.setFullName(newFullName);
+
+        if(employee instanceof Experience){
+            showMessage("Enter new experience: ");
+            int expInYear = scanner.nextInt();
+
+            showMessage("Enter new skills: ");
+            String proSkill = scanner.nextLine();
+
+            ((Experience) employee).setProSkill(proSkill);
+            ((Experience) employee).setExpInYear(expInYear);
+        }
+        else if (employee instanceof Fresher){
+            showMessage("Enter new graduation: ");
+            String graduationDate = scanner.nextLine();
+
+            showMessage("Enter new rank: ");
+            String graduationRank = scanner.nextLine();
+
+            showMessage("Enter new education: ");
+            String education = scanner.nextLine();
+
+            ((Fresher) employee).setEducation(education);
+            ((Fresher) employee).setGraduationDate(graduationDate);
+            ((Fresher) employee).setGraduationRank(graduationRank);
+        }
+        else if (employee instanceof Intern) {
+            showMessage("Enter new major: ");
+            String majors = scanner.nextLine();
+
+            showMessage("Enter new semester: ");
+            String semester = scanner.nextLine();
+
+            showMessage("Enter new university: ");
+            String universityName = scanner.nextLine();
+
+            ((Intern) employee).setMajors(majors);
+            ((Intern) employee).setSemester(semester);
+            ((Intern) employee).setUniversityName(universityName);
+        }
+
+        return employee;
     }
 
     public void successDelete() {
